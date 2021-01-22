@@ -1,0 +1,11 @@
+node{
+ stage('checkout'){
+ checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github2', url: 'https://github.com/jyothsnapothineni/myapp.git']]])
+ }
+   stage('build'){
+     echo "this is build stage"
+ }
+    stage('test'){
+     echo "this is test stage"
+ }
+}
